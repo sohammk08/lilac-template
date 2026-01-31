@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function WorkWithMe() {
   return (
-    <section className="bg-[#E8E2DE] font-sans">
+    <section className="bg-[] font-sans">
       <div className="flex flex-col lg:flex-row min-h-150 lg:min-h-200">
         {/* Left section */}
         <div className="w-full lg:w-1/2 relative h-auto">
@@ -17,7 +17,7 @@ function WorkWithMe() {
         </div>
 
         {/* Right section */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center bg-[#E8E2DE]">
+        <div className="w-full lg:w-1/2 flex flex-col items-center bg-[#c2becb]">
           <div className="flex-1 px-12 lg:px-15 flex flex-col justify-center text-left font-medium space-y-6 text-[#3d4a3d] text-lg leading-relaxed">
             <h2 className="text-4xl lg:text-5xl font-medium tracking-tight">
               You don&apos;t have to do this all <i>alone</i>.
