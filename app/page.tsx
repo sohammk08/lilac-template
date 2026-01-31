@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Hero from "./components/Hero";
 
-export default function Home() {
+function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold text-green-500/50 font-mono">
-        Hello World
-      </h1>
+      <Hero />
     </div>
   );
 }
+
+export default Home;
