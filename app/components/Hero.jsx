@@ -3,8 +3,8 @@ import Image from "next/image";
 
 function Hero() {
   return (
-    <section className="bg-[#FDF8F3] w-full min-h-screen items-center justify-center">
-      <div className="justify-center mx-auto px-6 py-24 lg:py-32 lg:pt-0 text-center space-x-45 flex items-center">
+    <section className="bg-[#FDF8F3] w-full min-h-screen items-center">
+      <div className="mx-auto pl-15 pt-10 text-center space-x-45 flex items-center">
         <div className="relative w-full max-w-md lg:max-w-xl aspect-4/6 rounded-t-full overflow-hidden">
           <Image
             src="/im1.png"
