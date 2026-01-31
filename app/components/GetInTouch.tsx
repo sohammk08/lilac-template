@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function GetInTouch() {
+function GetInTouch() {
   return (
     <section className="bg-[#E8E2DE] font-sans">
       <div className="flex flex-col lg:flex-row min-h-150 lg:min-h-170">
@@ -42,3 +42,5 @@ export default function GetInTouch() {
     </section>
   );
 }
+
+export default GetInTouch;
