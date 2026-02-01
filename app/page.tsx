@@ -1,3 +1,4 @@
+import FAQ from "./components/FAQ";
 import GetInTouch from "./components/GetInTouch";
 import Hero from "./components/Hero";
 import Specialities from "./components/Specialities";
@@ -12,6 +13,7 @@ function Home() {
       <Specialities />
       <WorkWithMe />
       <TherapistIntroduction />
+      <FAQ />
     </div>
   );
 }
