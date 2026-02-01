@@ -1,3 +1,4 @@
+import CTA from "./components/CTA";
 import FAQ from "./components/FAQ";
 import GetInTouch from "./components/GetInTouch";
 import Hero from "./components/Hero";
@@ -16,6 +17,7 @@ function Home() {
       <TherapistIntroduction />
       <FAQ />
       <ProfBackground />
+      <CTA />
     </div>
   );
 }
