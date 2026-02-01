@@ -31,12 +31,12 @@ function FAQ() {
   };
 
   return (
-    <section className="bg-[#FDF8F3] font-sans py-20 lg:py-28">
+    <section className="bg-[#FDF8F3] font-sans py-20 lg:py-25">
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-start">
           {/* Left Section */}
           <div className="w-full lg:w-5/12 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-sm lg:max-w-md aspect-3/4 rounded-t-[200px] overflow-hidden bg-[#E8E2DE]">
+            <div className="relative w-full max-w-sm lg:max-w-lg h-170 aspect-3/4 rounded-t-[210px] overflow-hidden bg-[#E8E2DE]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/flowers2.png"
@@ -47,7 +47,7 @@ function FAQ() {
           </div>
 
           {/* Right Section */}
-          <div className="w-full lg:w-7/12 flex flex-col pt-4">
+          <div className="w-full lg:w-7/12 flex flex-col pt-30">
             <h2 className="text-4xl lg:text-5xl font-medium text-[#3d4a3d] mb-14 tracking-tight">
               FAQs
             </h2>
@@ -63,7 +63,7 @@ function FAQ() {
                   >
                     <button
                       onClick={() => handleToggle(index)}
-                      className="w-full flex items-center gap-8 py-7 text-left group outline-none"
+                      className="w-full flex items-center gap-8 py-7 text-left group outline-none cursor-pointer"
                     >
                       {/* Icon */}
                       <div className="relative w-6 h-6 flex items-center justify-center shrink-0">

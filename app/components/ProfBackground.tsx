@@ -1,0 +1,89 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const credentials = [
+  {
+    title: "Education",
+    content:
+      "Master's in Clinical Psychology from UNIVERSITY_NAME. Bachelor's in Psychology from UNIVERSITY_NAME. Specialized training in cognitive behavioral therapy and mindfulness-based stress reduction.",
+  },
+  {
+    title: "Licensure",
+    content:
+      "Licensed Professional Clinical Counselor (LPCC) in the state of Minnesota. License #XXXXX. Fully credentialed and in good standing with the Minnesota Board of Behavioral Health and Therapy.",
+  },
+  {
+    title: "Certifications",
+    content:
+      "Certified Clinical Anxiety Treatment Professional (CCATP), EMDR Trained Therapist, Certified Mindfulness-Based Stress Reduction (MBSR) Instructor.",
+  },
+];
+
+function ProfBackground() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section className="bg-[#E8E2DE] font-sans py-20 lg:py-20">
+      <div className="max-w-4xl mx-auto px-6 lg:px-12">
+        <h2 className="text-4xl lg:text-5xl font-semibold text-[#3d4a3d] text-center mb-8 tracking-tight">
+          My Professional Background
+        </h2>
+
+        <div className="border-t border-[#3d4a3d]">
+          {credentials.map((item, index) => {
+            const isOpen = openIndex === index;
+
+            return (
+              <div key={index} className="border-y border-[#3d4a3d]/30">
+                <button
+                  onClick={() => handleToggle(index)}
+                  className="w-full flex items-center justify-between py-6 lg:py-4 text-left group outline-none cursor-pointer"
+                >
+                  <span className="text-xl lg:text-[28px] font-medium text-[#3d4a3d] tracking-tight">
+                    {item.title}
+                  </span>
+                  <div className="relative w-6 h-6 flex items-center justify-center shrink-0">
+                    <span className="absolute w-6 h-[1.5px] bg-[#3d4a3d]" />
+                    <motion.span
+                      className="absolute w-6 h-[1.5px] bg-[#3d4a3d]"
+                      initial={{ rotate: 90 }}
+                      animate={{ rotate: isOpen ? 0 : 90 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    />
+                  </div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{
+                        height: { duration: 0.35, ease: [0.4, 0, 0.2, 1] },
+                        opacity: { duration: 0.25 },
+                      }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pb-8 text-[#3d4a3d] text-lg leading-relaxed max-w-3xl font-normal">
+                        {item.content}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default ProfBackground;
