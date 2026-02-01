@@ -18,8 +18,8 @@ function WorkWithMe() {
 
         {/* Right section */}
         <div className="w-full lg:w-1/2 flex flex-col items-center bg-[#c2becb]">
-          <div className="flex-1 px-12 lg:px-15 flex flex-col justify-center text-left font-medium space-y-6 text-[#3d4a3d] text-lg leading-relaxed">
-            <h2 className="text-4xl lg:text-5xl font-medium tracking-tight">
+          <div className="flex-1 px-12 lg:px-15 flex flex-col justify-center text-left font-medium space-y-6 text-[#214321] text-lg leading-relaxed">
+            <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight">
               You don&apos;t have to do this all <i>alone</i>.
             </h2>
             <p>If you are facing any of these, there&apos;s hope:</p>

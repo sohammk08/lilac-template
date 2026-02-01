@@ -1,6 +1,7 @@
 import GetInTouch from "./components/GetInTouch";
 import Hero from "./components/Hero";
 import Specialities from "./components/Specialities";
+import TherapistIntroduction from "./components/TherapistIntroduction";
 import WorkWithMe from "./components/WorkWithMe";
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
       <GetInTouch />
       <Specialities />
       <WorkWithMe />
+      <TherapistIntroduction />
     </div>
   );
 }

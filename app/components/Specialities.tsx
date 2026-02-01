@@ -25,7 +25,7 @@ function Specialities() {
   return (
     <section className="bg-[#FDF8F3] font-sans py-20 lg:py-28">
       <div className=" mx-auto px-6 lg:px-12">
-        <h2 className="text-4xl lg:text-5xl font-medium text-[#3d4a3d] text-center mb-16 lg:mb-20 tracking-tight">
+        <h2 className="text-4xl lg:text-5xl font-semibold text-[#3d4a3d] text-center mb-16 lg:mb-20 tracking-tight">
           My Specialities
         </h2>
 
