@@ -19,7 +19,6 @@ function Home() {
       <FAQ />
       <ProfBackground />
       <CTA />
-      <Footer />
     </div>
   );
 }

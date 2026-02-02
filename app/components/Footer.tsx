@@ -14,15 +14,6 @@ export default function Footer() {
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
-    },
-  };
-
   return (
     <footer className="bg-[#FDF8F3] font-sans">
       {/* Main Footer */}
@@ -35,7 +26,12 @@ export default function Footer() {
       >
         <div className="grid grid-cols-1 md:grid-cols-3">
           {/* Brand & Contact */}
-          <motion.div variants={itemVariants}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-3xl lg:text-4xl font-semibold text-black mb-8 tracking-tight">
               Lilac Template
             </h3>
@@ -63,7 +59,13 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="ml-75">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+            viewport={{ once: true }}
+            className="ml-75"
+          >
             <h3 className="text-3xl lg:text-4xl font-semibold text-black mb-8 tracking-tight">
               Hours
             </h3>
@@ -74,7 +76,13 @@ export default function Footer() {
           </motion.div>
 
           {/* Find/Navigation */}
-          <motion.div variants={itemVariants} className="md:text-right">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+            viewport={{ once: true }}
+            className="md:text-right"
+          >
             <h3 className="text-3xl lg:text-4xl font-semibold text-black mb-8 tracking-tight">
               Find
             </h3>
