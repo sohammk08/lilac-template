@@ -16,7 +16,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#FDF8F3] font-sans">
-      {/* Main Footer */}
       <motion.div
         className="mx-6 lg:mx-12 py-16 lg:py-20"
         initial="hidden"

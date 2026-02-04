@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { IoCloseOutline } from "react-icons/io5";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 interface GalleryImage {
   id: number;
@@ -41,11 +41,8 @@ const IMAGES: GalleryImage[] = [
 ];
 
 function Contact() {
-  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-
-  // --- Mock Data ---
-  // Using Unsplash images similar to the aesthetic in the video
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
   // Handle opening the lightbox
   const openLightbox = (image: GalleryImage, index: number) => {
@@ -103,13 +100,13 @@ function Contact() {
   }, [selectedImage]);
 
   return (
-    <section className="bg-[#C8C4CE] font-sans min-h-screen">
+    <section className="bg-[#b4aebd] font-sans min-h-screen">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left: Content & Images */}
+          {/* Left Section */}
           <div>
             <motion.h1
-              className="text-5xl lg:text-7xl font-medium text-[#3d4a3d] mb-12 tracking-tight"
+              className="text-5xl lg:text-7xl font-semibold text-[#3d4a3d] mb-12 tracking-tight"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -147,10 +144,8 @@ function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
             >
-              {/* Main Arch Image */}
-              <div className="relative aspect-[3/4] rounded-t-[200px] overflow-hidden bg-gray-300">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="relative aspect-3/4 rounded-t-[200px] overflow-hidden bg-gray-300">
+                <motion.img
                   src="/holdingflowers.png"
                   alt="Person holding lilac flowers"
                   className="object-cover w-full h-full"
@@ -158,9 +153,8 @@ function Contact() {
               </div>
 
               {/* Overlapping Circle Image */}
-              <div className="absolute -bottom-8 -right-8 w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 border-[#C8C4CE] bg-[#C8C4CE]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="absolute -bottom-8 -right-8 w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden bg-[#C8C4CE]">
+                <motion.img
                   src="/flowers.png"
                   alt="White flowers"
                   className="object-cover w-full h-full"
@@ -169,7 +163,7 @@ function Contact() {
             </motion.div>
           </div>
 
-          {/* Right: Info Box */}
+          {/* Right Section */}
           <motion.div
             className="bg-[#2a3a2a] p-8 lg:p-12"
             initial={{ opacity: 0, x: 30 }}
@@ -211,11 +205,11 @@ function Contact() {
           className="inline-flex items-center gap-3 px-8 py-2 border border-[#3d4a3d] text-[#3d4a3d] text-base font-semibold tracking-wider uppercase hover:bg-[#3d4a3d] hover:text-[#FDF8F3] transition-all duration-300"
         >
           BOOK CONSULTATION
-          <span className="text-xl">→</span>
+          <span className="text-xl my-auto">→</span>
         </Link>
       </div>
 
-      {/* Office Location with Google Maps */}
+      {/* Office Location */}
       <div className="bg-[#838344] py-20 lg:py-28">
         <div className="mx-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -245,7 +239,7 @@ function Contact() {
 
             {/* Right: Google Maps */}
             <motion.div
-              className="w-full h-[400px] lg:h-[500px] bg-gray-200"
+              className="w-full h-100 lg:h-125 bg-gray-200"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -289,10 +283,10 @@ function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative aspect-[4/5] overflow-hidden cursor-pointer bg-gray-200"
+                className="group relative aspect-4/5 overflow-hidden cursor-pointer bg-gray-200"
                 onClick={() => openLightbox(img, index)}
               >
-                <img
+                <motion.img
                   src={img.src}
                   alt={img.alt}
                   className="h-full w-full object-cover transition-transform duration-700 ease-in-out"
@@ -314,7 +308,7 @@ function Contact() {
               className="fixed inset-0 z-50 flex items-center justify-center bg-white/95 backdrop-blur-sm"
               onClick={closeLightbox}
             >
-              {/* Close Button */}
+              {/* Close */}
               <button
                 onClick={closeLightbox}
                 className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-800 transition-colors z-50"
@@ -323,7 +317,7 @@ function Contact() {
                 <IoCloseOutline size={36} />
               </button>
 
-              {/* Navigation Buttons */}
+              {/* Navigation */}
               <button
                 onClick={showPrev}
                 className="absolute left-4 md:left-8 p-2 text-gray-300 hover:text-gray-800 transition-colors z-50 hidden sm:block"
@@ -340,7 +334,6 @@ function Contact() {
                 <FiChevronRight size={48} strokeWidth={1} />
               </button>
 
-              {/* Main Image Container */}
               <motion.div
                 key={selectedImage.id}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -350,7 +343,7 @@ function Contact() {
                 className="relative w-full h-full max-w-5xl max-h-[90vh] p-4 flex items-center justify-center"
                 onClick={(e) => e.stopPropagation()}
               >
-                <img
+                <motion.img
                   src={selectedImage.src}
                   alt={selectedImage.alt}
                   className="max-w-full max-h-full object-contain shadow-2xl"

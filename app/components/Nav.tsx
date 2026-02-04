@@ -1,8 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function Nav() {
+  const pathname = usePathname();
+
   return (
-    <header className="bg-[#FDF8F3]">
+    <header
+      className={`${pathname === "/" ? "bg-[#FDF8F3]" : "bg-[#b4aebd]"} text-[#FDF8F3]`}
+    >
       <nav className="font-sans flex justify-between items-center px-12 py-4 mx-auto">
         <Link
           href="/"
