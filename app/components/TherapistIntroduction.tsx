@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function TherapistIntroduction() {
+function TherapistIntroduction() {
   return (
-    <section className="bg-[#E8E2DE] font-sans pb-20">
-      <div className="flex flex-col lg:flex-row justify-between min-h-175 lg:min-h-200 mx-30 space-x-5">
-        {/* Left Section */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center font-semibold py-16 lg:py-20 order-2 lg:order-1">
-          <h2 className="text-5xl lg:text-6xl font-medium text-[#3d4a3d] mb-8 tracking-tight">
+    <section className="bg-[#E8E2DE] font-sans py-16 sm:py-20">
+      <div className="flex flex-col lg:flex-row justify-between min-h-150 lg:min-h-175 xl:min-h-200 px-6 sm:px-10 lg:px-16 xl:px-20 gap-12 lg:gap-8">
+        {/* Left Section - Content */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center font-semibold py-12 sm:py-16 lg:py-20 order-2 lg:order-1">
+          <h2 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-medium text-[#3d4a3d] mb-6 sm:mb-8 tracking-tight text-center lg:text-left">
             Hi, I&apos;m Lilac.
           </h2>
 
-          <p className="text-[#3d4a3d] text-xl leading-relaxed mb-12">
+          <p className="text-[#3d4a3d] text-lg sm:text-xl leading-relaxed mb-10 sm:mb-12 text-center lg:text-left">
             I&apos;m committed to providing a safe and supportive environment
             where we can explore your thoughts, feelings, and behaviors. With
             empathy and guidance, we&apos;ll work together to navigate the
@@ -20,32 +20,36 @@ export default function TherapistIntroduction() {
 
           <Link
             href="/contact"
-            className="inline-flex mx-auto items-center gap-3 px-6 py-3 border border-[#3d4a3d] text-[#3d4a3d] text-sm font-semibold uppercase hover:bg-[#3d4a3d] hover:text-[#E8E2DE] transition-all duration-300 w-fit"
+            className="inline-flex mx-auto lg:mx-0 items-center gap-3 px-6 py-3 border border-[#3d4a3d] text-[#3d4a3d] text-sm font-semibold uppercase hover:bg-[#3d4a3d] hover:text-[#E8E2DE] transition-all duration-300 w-fit"
           >
             Let&apos;s Chat
-            <span>→</span>
+            <span aria-hidden="true">→</span>
           </Link>
         </div>
 
-        {/* Right Section */}
-        <div className="w-full lg:w-1/2 relative flex items-center justify-center lg:justify-start pl-25 order-1 lg:order-2 overflow-visible">
-          <div className="relative w-full h-160 max-w-sm lg:max-w-md aspect-3/4 rounded-t-full overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+        {/* Right Section - Images */}
+        <div className="w-full lg:w-1/2 relative flex items-center justify-center lg:justify-start lg:pl-8 xl:pl-12 order-1 lg:order-2">
+          {/* Main Image */}
+          <div className="relative w-full max-w-70 sm:max-w-[320px] md:max-w-95 lg:max-w-sm xl:max-w-md aspect-3/4 rounded-t-full overflow-hidden">
+            <Image
               src="/holdingflowers.png"
               alt="Lilac holding flowers"
-              className="object-cover w-full h-full"
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, (max-width: 1024px) 380px, (max-width: 1280px) 24rem, 28rem"
             />
           </div>
 
-          <div className="absolute bottom-0 right-0 lg:-right-10 w-45 h-45 lg:w-75 lg:h-75 rounded-full overflow-hidden z-10">
+          {/* Secondary image */}
+          <div className="absolute -bottom-6 right-9 sm:-bottom-8 sm:-right-1 lg:bottom-8 lg:-right-8 xl:right-10 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 rounded-full overflow-hidden z-10 shadow-lg">
             <Image
               src="/flowers.png"
               alt="White flowers"
               priority
-              width={300}
-              height={300}
-              className="object-cover w-full h-full"
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 160px, (max-width: 1280px) 192px, 224px"
             />
           </div>
         </div>
@@ -53,3 +57,5 @@ export default function TherapistIntroduction() {
     </section>
   );
 }
+
+export default TherapistIntroduction;

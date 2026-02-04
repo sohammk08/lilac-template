@@ -17,24 +17,25 @@ export default function Footer() {
   return (
     <footer className="bg-[#FDF8F3] font-sans">
       <motion.div
-        className="mx-6 lg:mx-12 py-16 lg:py-20"
+        className="px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
       >
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-8">
           {/* Brand & Contact */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             viewport={{ once: true }}
+            className="text-center md:text-left"
           >
-            <h3 className="text-3xl lg:text-4xl font-semibold text-black mb-8 tracking-tight">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-black mb-6 sm:mb-8 tracking-tight">
               Lilac Template
             </h3>
-            <div className="space-y-1 text-black text-lg font-medium mb-8">
+            <div className="space-y-1 text-black text-base sm:text-lg font-medium mb-6 sm:mb-8">
               <p>123 Example Road</p>
               <p>Minneapolis, MN</p>
             </div>
@@ -42,7 +43,7 @@ export default function Footer() {
               <p>
                 <a
                   href="mailto:email@example.com"
-                  className="text-black text-lg underline underline-offset-4 hover:opacity-60 transition-opacity duration-200"
+                  className="text-black text-base sm:text-lg underline underline-offset-4 hover:opacity-60 transition-opacity duration-200"
                 >
                   email@example.com
                 </a>
@@ -50,7 +51,7 @@ export default function Footer() {
               <p>
                 <a
                   href="tel:+15555555555"
-                  className="text-black text-lg underline underline-offset-4 hover:opacity-60 transition-opacity duration-200"
+                  className="text-black text-base sm:text-lg underline underline-offset-4 hover:opacity-60 transition-opacity duration-200"
                 >
                   (555) 555-5555
                 </a>
@@ -58,17 +59,18 @@ export default function Footer() {
             </div>
           </motion.div>
 
+          {/* Hours */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             viewport={{ once: true }}
-            className="ml-75"
+            className="text-center md:text-left lg:pl-8 xl:pl-12"
           >
-            <h3 className="text-3xl lg:text-4xl font-semibold text-black mb-8 tracking-tight">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-black mb-6 sm:mb-8 tracking-tight">
               Hours
             </h3>
-            <div className="text-black font-medium text-lg space-y-1">
+            <div className="text-black font-medium text-base sm:text-lg space-y-1">
               <p>Monday - Friday</p>
               <p>10am - 6pm</p>
             </div>
@@ -80,27 +82,27 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             viewport={{ once: true }}
-            className="md:text-right"
+            className="text-center md:col-span-2 lg:col-span-1 md:text-right"
           >
-            <h3 className="text-3xl lg:text-4xl font-semibold text-black mb-8 tracking-tight">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-black mb-6 sm:mb-8 tracking-tight">
               Find
             </h3>
-            <nav className="flex flex-col space-y-3 md:items-end">
+            <nav className="flex flex-col space-y-3 items-center md:items-end">
               <Link
                 href="/"
-                className="text-black text-lg underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 w-fit"
+                className="text-black text-base sm:text-lg underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 w-fit"
               >
                 Home
               </Link>
               <Link
                 href="/contact"
-                className="text-black text-lg underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 w-fit"
+                className="text-black text-base sm:text-lg underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 w-fit"
               >
                 Contact
               </Link>
               <Link
                 href="/blog"
-                className="text-black text-lg underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 w-fit"
+                className="text-black text-base sm:text-lg underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 w-fit"
               >
                 Blog
               </Link>
@@ -111,7 +113,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <motion.div
-        className="bg-[#E8E2DE] py-12 pb-4 px-6"
+        className="bg-[#E8E2DE] py-8 sm:py-10 lg:py-12 pb-4 px-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -119,7 +121,7 @@ export default function Footer() {
       >
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           <motion.div
-            className="flex flex-wrap justify-center gap-x-6 text-center text-black"
+            className="flex flex-wrap justify-center gap-x-4 sm:gap-x-6 gap-y-2 text-center text-black"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -127,25 +129,25 @@ export default function Footer() {
           >
             <Link
               href="/privacy"
-              className="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 text-sm lg:text-base"
+              className="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 text-xs sm:text-sm lg:text-base"
             >
               Privacy & Cookies Policy
             </Link>
             <Link
               href="/good-faith-estimate"
-              className="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 text-sm lg:text-base"
+              className="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 text-xs sm:text-sm lg:text-base"
             >
               Good Faith Estimate
             </Link>
             <Link
               href="/terms"
-              className="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 text-sm lg:text-base"
+              className="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 text-xs sm:text-sm lg:text-base"
             >
               Website Terms & Conditions
             </Link>
             <Link
               href="/disclaimer"
-              className="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 text-sm lg:text-base"
+              className="underline underline-offset-4 hover:opacity-60 transition-opacity duration-200 text-xs sm:text-sm lg:text-base"
             >
               Disclaimer
             </Link>
@@ -153,7 +155,7 @@ export default function Footer() {
 
           {/* Credits */}
           <motion.p
-            className="text-black text-sm lg:text-base text-center mt-3"
+            className="text-black text-xs sm:text-sm lg:text-base text-center mt-3"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -172,7 +174,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <motion.p
-            className="text-black text-center text-xs lg:text-sm mt-10"
+            className="text-black text-center text-xs mt-8 sm:mt-10"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
