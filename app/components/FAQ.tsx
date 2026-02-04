@@ -37,7 +37,7 @@ function FAQ() {
         <div className="flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-20 items-start">
           {/* Left Section - Image */}
           <div className="w-full lg:w-5/12 flex justify-center lg:justify-end order-1 lg:order-1">
-            <div className="relative w-full max-w-[240px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-sm xl:max-w-md aspect-[3/4] rounded-t-[120px] sm:rounded-t-[160px] lg:rounded-t-[180px] xl:rounded-t-[210px] overflow-hidden bg-[#E8E2DE]">
+            <div className="relative w-full max-w-60 sm:max-w-70 md:max-w-[320px] lg:max-w-sm xl:max-w-md aspect-3/4 rounded-t-[120px] sm:rounded-t-[160px] lg:rounded-t-[180px] xl:rounded-t-[210px] overflow-hidden bg-[#E8E2DE]">
               <Image
                 src="/flowers2.png"
                 alt="Decorative dried flowers"

@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 function Nav() {
   const pathname = usePathname();
@@ -43,20 +43,20 @@ function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Animation variants
-  const overlayVariants = {
+  // Animation variants with proper types
+  const overlayVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.3, ease: "easeOut" },
+      transition: { duration: 0.3, ease: "easeOut" as const },
     },
     exit: {
       opacity: 0,
-      transition: { duration: 0.2, ease: "easeIn" },
+      transition: { duration: 0.2, ease: "easeIn" as const },
     },
   };
 
-  const linkContainerVariants = {
+  const linkContainerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -67,7 +67,7 @@ function Nav() {
     },
   };
 
-  const linkVariants = {
+  const linkVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 30,
