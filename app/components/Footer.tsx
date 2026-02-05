@@ -33,11 +33,11 @@ export default function Footer() {
             className="text-center md:text-left"
           >
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-black mb-6 sm:mb-8 tracking-tight">
-              Lilac Template
+              Dr. Maya Reynolds
             </h3>
             <div className="space-y-1 text-black text-base sm:text-lg font-medium mb-6 sm:mb-8">
-              <p>123 Example Road</p>
-              <p>Minneapolis, MN</p>
+              <p>123 Street 45W</p>
+              <p>Santa Monica, CA 90401</p>
             </div>
             <div className="space-y-2 font-semibold">
               <p>
@@ -180,7 +180,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            All Rights Reserved © 2024 Your Business Name Here, LLC.
+            All Rights Reserved © 2024 Maya Reynolds.
           </motion.p>
         </div>
       </motion.div>

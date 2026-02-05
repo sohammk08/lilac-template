@@ -3,21 +3,21 @@ import Image from "next/image";
 function Specialities() {
   const specialties = [
     {
-      title: "Self-Esteem",
+      title: "Anxiety & Panic",
       description:
-        "Building a strong sense of self-worth is key to living a fulfilled life. Let's work together to bolster your self-esteem.",
+        "Understanding and easing worry, racing thoughts, panic symptoms and the physical effects of anxiety.",
       image: "/specialty1.png",
     },
     {
-      title: "Relationships",
+      title: "Trauma & PTSD",
       description:
-        "Navigating relationships can be complex. I'm here to guide you through these complexities to help you form healthier connections.",
+        "Support tailored to help you heal from past experiences, whether from a single event or ongoing trauma, and how they impact your life, relationships, and sense of self today.",
       image: "/specialty2.png",
     },
     {
-      title: "Burnout",
+      title: "Burnout & Perfectionism",
       description:
-        "Feeling overwhelmed by your career is more common than you think. Together, we'll identify strategies to manage and prevent burnout.",
+        "Helping high-achieving professionals, entrepreneurs, and creatives recover from chronic stress, reconnect with themselves, and build healthier boundaries and rhythms.",
       image: "/specialty3.png",
     },
   ];

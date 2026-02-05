@@ -6,18 +6,17 @@ import { motion, AnimatePresence } from "framer-motion";
 const credentials = [
   {
     title: "Education",
-    content:
-      "Master's in Clinical Psychology from UNIVERSITY_NAME. Bachelor's in Psychology from UNIVERSITY_NAME. Specialized training in cognitive behavioral therapy and mindfulness-based stress reduction.",
+    content: "Doctor of Psychology (PsyD)",
   },
   {
     title: "Licensure",
     content:
-      "Licensed Professional Clinical Counselor (LPCC) in the state of Minnesota. License #XXXXX. Fully credentialed and in good standing with the Minnesota Board of Behavioral Health and Therapy.",
+      "Licensed Clinical Psychologist (LCP) in California, License #XXXXXX",
   },
   {
     title: "Certifications",
     content:
-      "Certified Clinical Anxiety Treatment Professional (CCATP), EMDR Trained Therapist, Certified Mindfulness-Based Stress Reduction (MBSR) Instructor.",
+      "I am EMDR-trained and draw on trauma-focused and somatic-informed approaches, with ongoing training in CBT, mindfulness-based interventions, and attachment/relational therapy.",
   },
 ];
 

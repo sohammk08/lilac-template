@@ -8,15 +8,23 @@ function TherapistIntroduction() {
         {/* Left Section - Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center font-semibold py-12 sm:py-16 lg:py-20 order-2 lg:order-1">
           <h2 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-medium text-[#3d4a3d] mb-6 sm:mb-8 tracking-tight text-center lg:text-left">
-            Hi, I&apos;m Lilac.
+            Hi, I&apos;m Dr. Maya
           </h2>
-
-          <p className="text-[#3d4a3d] text-lg sm:text-xl leading-relaxed mb-10 sm:mb-12 text-center lg:text-left">
-            I&apos;m committed to providing a safe and supportive environment
-            where we can explore your thoughts, feelings, and behaviors. With
-            empathy and guidance, we&apos;ll work together to navigate the
-            challenges life throws your way.
-          </p>
+          <div className="text-[#3d4a3d] text-lg sm:text-xl leading-relaxed mb-10 sm:mb-12 text-center lg:text-left space-y-5">
+            <p>
+              I&apos;m a licensed psychologist in Santa Monica, California,
+              helping adults with anxiety, trauma, and stress. I offer a
+              supportive therapy space that combines different approaches to
+              address emotional and physical well-being.
+            </p>
+            <p>
+              My goal is to help clients feel safe and in control, especially
+              when dealing with trauma. Many of my clients are high-achievers
+              who have become exhausted and disconnected. I help them slow down,
+              reconnect, and live a more balanced life. I provide both in-person
+              and online sessions.
+            </p>
+          </div>
 
           <Link
             href="/contact"

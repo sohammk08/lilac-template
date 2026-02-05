@@ -9,15 +9,19 @@ function GetInTouch() {
         <div className="w-full lg:w-1/2 flex flex-col bg-[#E8E2DE] order-2 lg:order-1">
           <div className="flex-1 px-6 sm:px-10 lg:px-16 py-12 lg:py-0 flex flex-col justify-center text-left font-medium space-y-6 text-[#3d4a3d] text-base sm:text-lg leading-relaxed">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight">
-              Live a fulfilling life.
+              Gain Clarity,
+              <br /> Cultivate Resilience
             </h2>
             <p>
-              Life can be challenging—especially when you&apos;re trying to
-              balance your personal and professional life.
+              Life can feel relentless at times. Especially when anxiety, stress
+              or the echoes of past experiences keep you on edge. You may appear
+              high-functioning to the outside world while quietly carrying
+              exhaustion, overthinking or physical tension.
             </p>
             <p>
-              It&apos;s easy to feel like you&apos;re alone in facing these
-              challenges, but I want you to know that I&apos;m here to help.
+              I&apos;m here to help you move through that. Together we can
+              create space for relief, clarity and a more sustainable way of
+              living.
             </p>
           </div>
 

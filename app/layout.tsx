@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lilac Template",
-  description: "Therapy in Minneapolis made easier.",
+  title: "Dr. Maya Reynolds, PsyD",
+  description: "Professional therapy services in Santa Monica, CA",
 };
 
 export default function RootLayout({

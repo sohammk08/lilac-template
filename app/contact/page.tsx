@@ -122,7 +122,7 @@ function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
             >
-              Starting therapy is courageous.
+              Starting therapy is a meaningful and courageous step.
             </motion.p>
 
             <motion.p
@@ -132,8 +132,9 @@ function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
             >
-              Get in touch for questions, or to book a free 15-minute
-              consultation.
+              I offer a free 15-minute phone or video consultation to answer
+              questions, discuss your needs, and see if we might be a good fit.
+              Feel free to reach out. No pressure, just a conversation.
             </motion.p>
 
             {/* Images */}
@@ -172,12 +173,10 @@ function Contact() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
           >
             <p className="text-[#FDF8F3] text-lg lg:text-xl leading-relaxed">
-              <span className="font-bold">PLEASE NOTE:</span> If you opt to use
-              a &quot;Form Block&quot; on your contact page this is not
-              HIPAA-compliant. Squarespace stores data that is input into forms
-              in the Marketing tab under Profiles. Instead, you can embed a
-              HIPAA-compliant form, a link to your client portal, or simply put
-              your email address.
+              <span className="font-bold">PLEASE NOTE:</span> Any contact form
+              used on this site is not HIPAA-compliant for sharing protected
+              health information. For clinical matters, please email directly or
+              use a secure client portal after we begin working together.
             </p>
           </motion.div>
         </div>
@@ -195,10 +194,7 @@ function Contact() {
           Book a Free Consultation
         </motion.h2>
         <motion.p className="text-2xl font-medium text-left text-[#3d4a3d] max-w-2xl mx-auto mb-8">
-          Add some text here if you like, and add your scheduling widget below
-          (you can get one by signing up for a scheduling account through
-          Squarespace, the top-tier plan is HIPAA compliant OR you can use your
-          client portal).
+          Add a calendar here (eg. calendly, cal.com, etc.)
         </motion.p>
         <Link
           href="#"
@@ -224,16 +220,16 @@ function Contact() {
                 My Office
               </h2>
               <div className="space-y-1 text-[#FDF8F3] text-xl lg:text-2xl mb-12">
-                <p>123 Example Street</p>
-                <p>Minneapolis, MN</p>
+                <p>123 Street 45W</p>
+                <p>Santa Monica, CA 90401</p>
               </div>
 
               <h3 className="text-3xl lg:text-4xl font-medium text-[#FDF8F3] mb-6 tracking-tight">
                 Hours
               </h3>
               <div className="space-y-1 text-[#FDF8F3] text-xl lg:text-2xl">
-                <p>Monday – Friday</p>
-                <p>10am – 6pm</p>
+                <p>Monday - Friday</p>
+                <p>10am - 6pm</p>
               </div>
             </motion.div>
 
@@ -246,7 +242,7 @@ function Contact() {
               transition={{ duration: 0.7, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11293.767352238133!2d-93.2654694!3d44.9777536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b3329a75fc44b3%3A0xab6d15df45dea9e!2sMinneapolis%2C%20MN!5e0!3m2!1sen!2sus!4v1709820000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21240.427724717898!2d-118.49622678955514!3d34.022924921427254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2a4cec2910019%3A0xb4170ab5ff23f5ab!2sSanta%20Monica%2C%20CA!5e0!3m2!1sen!2sus!4v1770314481704!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

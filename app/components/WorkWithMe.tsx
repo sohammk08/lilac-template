@@ -23,19 +23,32 @@ function WorkWithMe() {
               You don&apos;t have to do this all <i>alone</i>.
             </h2>
 
-            <p>If you are facing any of these, there&apos;s hope:</p>
+            <p>
+              If any of these feel familiar, know that change and relief are
+              possible:
+            </p>
 
             <ul className="ml-5 sm:ml-8 space-y-2 list-disc">
-              <li>Persistent feelings of sadness or hopelessness</li>
-              <li>Trouble focusing or making decisions</li>
-              <li>Difficulty maintaining relationships</li>
-              <li>Feeling constantly exhausted or unmotivated</li>
-              <li>A pervasive sense of being overwhelmed</li>
+              <li>
+                Constant worry, overthinking or feeling &quot;on edge&quot;
+              </li>
+              <li>Trouble sleeping or waking up already tense.</li>
+              <li>
+                Physical symptoms of anxiety (tight chest, racing heart,
+                fatigue)
+              </li>
+              <li>Feeling stuck, numb or disconnected from yourself</li>
+              <li>
+                Lingering effects of past trauma or difficult life experiences
+              </li>
+              <li>
+                Professional burnout, perfectionism, or chronic high-pressure
+              </li>
             </ul>
 
             <p>
-              With empathy and guidance, we&apos;ll work together to navigate
-              the challenges life throws your way.
+              With empathy, structure, and evidence-based tools, we&apos;ll work
+              together to help you feel more grounded and present in your life.
             </p>
           </div>
 

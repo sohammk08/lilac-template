@@ -21,12 +21,10 @@ function Hero() {
           {/* Content */}
           <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
             <h1 className="text-[#3d4a3d] text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-semibold leading-tight tracking-tight mb-6">
-              Live your life
-              <br />
-              in full bloom
+              Find clarity amidst the noise
             </h1>
             <p className="text-[#3d4a3d] text-base sm:text-lg md:text-xl font-medium mb-8 max-w-xl">
-              Therapy for Adults in Minneapolis, MN.
+              Therapy for Adults in Santa Monica, CA.
             </p>
             <Link
               href="/contact"
