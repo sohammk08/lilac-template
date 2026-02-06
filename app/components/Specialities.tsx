@@ -26,7 +26,7 @@ function Specialities() {
   return (
     <section className="bg-[#FDF8F3] font-sans py-20 lg:py-28">
       <div className=" mx-auto px-6 lg:px-12">
-        <h2 className="text-4xl lg:text-5xl font-semibold text-[#3d4a3d] text-center mb-16 lg:mb-20 tracking-tight">
+        <h2 className="text-4xl lg:text-5xl font-serif font-semibold text-[#3d4a3d] text-center mb-16 lg:mb-20 tracking-tight">
           My Specialities
         </h2>
 
@@ -36,10 +36,10 @@ function Specialities() {
               key={item.title}
               className="border border-[#3d4a3d] font-medium bg-[#E8E2DE] p-5 flex flex-col h-full"
             >
-              <h3 className="text-xl font-semibold text-[#3d4a3d] mb-6">
+              <h3 className="text-2xl font-serif font-bold text-[#3d4a3d] mb-1">
                 {item.title}
               </h3>
-              <p className="text-[#3d4a3d] text-sm leading-relaxed mb-8 grow">
+              <p className="text-[#3d4a3d] text-sm font-sans leading-relaxed mb-8 grow">
                 {item.description}
               </p>
               <div className="w-80 h-80 mx-auto rounded-full overflow-hidden">

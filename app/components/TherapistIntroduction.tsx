@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 function TherapistIntroduction() {
   return (
-    <section className="bg-[#E8E2DE] font-sans py-16 sm:py-20">
+    <section className="bg-[#0d261e] font-sans py-16 sm:py-20">
       <div className="flex flex-col lg:flex-row justify-between min-h-150 lg:min-h-175 xl:min-h-200 px-6 sm:px-10 lg:px-16 xl:px-20 gap-12 lg:gap-8">
         {/* Left Section - Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center font-semibold py-12 sm:py-16 lg:py-20 order-2 lg:order-1">
-          <h2 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-medium text-[#3d4a3d] mb-6 sm:mb-8 tracking-tight text-center lg:text-left">
+          <h2 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-serif font-semibold text-[#f5f0e6] mb-6 sm:mb-8 tracking-tight text-center lg:text-left">
             Hi, I&apos;m Dr. Maya
           </h2>
-          <div className="text-[#3d4a3d] text-lg sm:text-xl leading-relaxed mb-10 sm:mb-12 text-center lg:text-left space-y-5">
+          <div className="text-[#f5f0e6]/90 font-sans text-lg sm:text-xl leading-relaxed mb-10 sm:mb-12 text-center lg:text-left space-y-5">
             <p>
               I&apos;m a licensed psychologist in Santa Monica, California,
               helping adults with anxiety, trauma, and stress. I offer a
@@ -29,7 +29,7 @@ function TherapistIntroduction() {
 
           <Link
             href="/contact"
-            className="inline-flex mx-auto lg:mx-0 items-center gap-3 px-6 py-3 border border-[#3d4a3d] text-[#3d4a3d] text-sm font-semibold uppercase hover:bg-[#3d4a3d] hover:text-[#E8E2DE] transition-all duration-300 w-fit"
+            className="inline-flex mx-auto lg:mx-0 items-center gap-3 px-6 py-3 border border-[#c4a574]/20 text-white/80 text-sm font-semibold uppercase hover:bg-white/80 hover:text-green-800 transition-all duration-300 w-fit"
           >
             Let&apos;s Chat
             <span aria-hidden="true">→</span>
