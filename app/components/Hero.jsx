@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
 function Hero() {
   return (
@@ -8,13 +10,14 @@ function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 xl:gap-42">
           {/* Image */}
           <div className="relative w-full max-w-70 sm:max-w-[320px] md:max-w-95 lg:max-w-md xl:max-w-xl aspect-3/4 lg:aspect-4/6 rounded-t-full overflow-hidden shrink-0">
-            <Image
+            <motion.img
               src="/im1.png"
               alt="Woman holding lilac flowers"
-              fill
-              priority
               className="object-cover object-top"
               sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, (max-width: 1024px) 380px, (max-width: 1280px) 28rem, 36rem"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             />
           </div>
 

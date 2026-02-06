@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 
 interface FAQItem {
   question: string;
@@ -38,12 +37,10 @@ function FAQ() {
           {/* Left Section - Image */}
           <div className="w-full lg:w-5/12 flex justify-center lg:justify-end order-1 lg:order-1">
             <div className="relative w-full max-w-60 sm:max-w-70 md:max-w-[320px] lg:max-w-sm xl:max-w-md aspect-3/4 rounded-t-[120px] sm:rounded-t-[160px] lg:rounded-t-[180px] xl:rounded-t-[210px] overflow-hidden bg-[#E8E2DE]">
-              <Image
+              <motion.img
                 src="/flowers2.png"
                 alt="Decorative dried flowers"
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, (max-width: 1024px) 320px, (max-width: 1280px) 24rem, 28rem"
+                className="absolute top-0 left-0 w-full h-full object-cover"
               />
             </div>
           </div>

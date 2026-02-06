@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
 function GetInTouch() {
   return (
@@ -35,13 +36,10 @@ function GetInTouch() {
 
         {/* Right section - Image */}
         <div className="w-full lg:w-1/2 relative h-100 sm:h-125 lg:h-auto order-1 lg:order-2">
-          <Image
+          <motion.img
             src="/im2.png"
-            alt="Flat lay with lilac flowers, coffee cup, hat, and journal"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            priority
+            alt=""
+            className="absolute top-0 left-0 w-full h-full object-cover"
           />
         </div>
       </div>

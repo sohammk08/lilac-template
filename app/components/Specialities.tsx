@@ -1,4 +1,5 @@
-import Image from "next/image";
+"use client";
+import { motion } from "framer-motion";
 
 function Specialities() {
   const specialties = [
@@ -42,13 +43,10 @@ function Specialities() {
                 {item.description}
               </p>
               <div className="w-80 h-80 mx-auto rounded-full overflow-hidden">
-                <Image
+                <motion.img
                   src={item.image}
                   alt={item.title}
-                  width={400}
-                  height={400}
                   className="object-cover w-full h-full"
-                  priority
                 />
               </div>
             </div>

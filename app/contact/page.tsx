@@ -16,7 +16,7 @@ interface GalleryImage {
 const IMAGES: GalleryImage[] = [
   {
     id: 1,
-    src: "/holdingflowers.png",
+    src: "/therapistImage.png",
     alt: "",
     aspect: "portrait",
   },
@@ -147,8 +147,8 @@ function Contact() {
             >
               <div className="relative aspect-3/4 rounded-t-[200px] overflow-hidden bg-gray-300">
                 <motion.img
-                  src="/holdingflowers.png"
-                  alt="Person holding lilac flowers"
+                  src="/therapistImage.png"
+                  alt="Therapist image"
                   className="object-cover w-full h-full"
                 />
               </div>

@@ -1,5 +1,6 @@
-import Image from "next/image";
+"use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 function TherapistIntroduction() {
   return (
@@ -39,25 +40,19 @@ function TherapistIntroduction() {
         <div className="w-full lg:w-1/2 relative flex items-center justify-center lg:justify-start lg:pl-8 xl:pl-12 order-1 lg:order-2">
           {/* Main Image */}
           <div className="relative w-full max-w-70 sm:max-w-[320px] md:max-w-95 lg:max-w-sm xl:max-w-md aspect-3/4 rounded-t-full overflow-hidden">
-            <Image
-              src="/holdingflowers.png"
+            <motion.img
+              src="/therapistImage.png"
               alt="Lilac holding flowers"
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, (max-width: 1024px) 380px, (max-width: 1280px) 24rem, 28rem"
+              className="absolute top-0 left-0 w-full h-full object-cover"
             />
           </div>
 
           {/* Secondary image */}
           <div className="absolute -bottom-6 right-9 sm:-bottom-8 sm:-right-1 lg:bottom-8 lg:-right-8 xl:right-10 w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 rounded-full overflow-hidden z-10 shadow-lg">
-            <Image
+            <motion.img
               src="/flowers.png"
               alt="White flowers"
-              priority
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 160px, (max-width: 1280px) 192px, 224px"
+              className="absolute top-0 left-0 w-full h-full object-cover"
             />
           </div>
         </div>

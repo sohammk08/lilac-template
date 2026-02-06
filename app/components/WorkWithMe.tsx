@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
 function WorkWithMe() {
   return (
@@ -7,12 +8,10 @@ function WorkWithMe() {
       <div className="flex flex-col lg:flex-row min-h-150 lg:min-h-200">
         {/* Left Section */}
         <div className="w-full lg:w-1/2 relative h-75 lg:h-auto">
-          <Image
+          <motion.img
             src="/workwithme.png"
-            alt=""
-            fill
-            className="object-cover"
-            priority
+            alt="Work with me illustration"
+            className="absolute top-0 left-0 w-full h-full object-cover"
           />
         </div>
 
@@ -20,7 +19,7 @@ function WorkWithMe() {
         <div className="w-full lg:w-1/2 flex flex-col bg-[#c2becb] text-[#214321]">
           <div className="flex-1 font-medium px-6 sm:px-10 lg:px-12 xl:px-16 py-10 lg:py-12 flex flex-col justify-center space-y-5 text-base lg:text-lg leading-relaxed">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
-              You don&apos;t have to do this all <i>alone</i>.
+              Know that help is <i>available</i>.
             </h2>
 
             <p>

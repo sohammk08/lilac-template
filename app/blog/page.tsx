@@ -35,7 +35,7 @@ const blogPosts: BlogPost[] = [
     id: 4,
     title: "Blog Post Four",
     date: "3/11/19",
-    image: "/holdingflowers.png",
+    image: "/im3.png",
     slug: "blog-post-four",
   },
 ];

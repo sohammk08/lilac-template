@@ -89,7 +89,7 @@ function Nav() {
       transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={`${bgColor} ${textColor} fixed top-0 left-0 right-0 z-50`}
     >
-      <nav className="font-sans flex justify-between items-center px-6 sm:px-8 lg:px-12 py-4 mx-auto">
+      <nav className="font-sans flex justify-between items-center px-6 sm:px-8 lg:px-6 py-4 mx-auto">
         {/* LEFT SIDE */}
         <div className="flex items-center">
           {/* Mobile: Hamburger */}
@@ -136,7 +136,7 @@ function Nav() {
             className="hidden md:block text-xl lg:text-[32px] font-sans font-semibold tracking-wide"
             onClick={closeMenu}
           >
-            Lilac Template
+            Dr. Maya Reynolds
           </Link>
         </div>
 
@@ -161,7 +161,7 @@ function Nav() {
             className="md:hidden text-lg font-sans font-semibold tracking-wide"
             onClick={closeMenu}
           >
-            Lilac Template
+            Dr. Maya Reynolds
           </Link>
         </div>
       </nav>
@@ -215,7 +215,7 @@ function Nav() {
                 className="text-lg font-semibold tracking-wide"
                 onClick={closeMenu}
               >
-                Lilac Template
+                Dr. Maya Reynolds
               </Link>
             </div>
 
