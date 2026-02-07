@@ -1,11 +1,12 @@
 import CTA from "./components/CTA";
 import FAQ from "./components/FAQ";
-import GetInTouch from "./components/GetInTouch";
 import Hero from "./components/Hero";
-import ProfBackground from "./components/ProfBackground";
-import Specialities from "./components/Specialities";
-import TherapistIntroduction from "./components/TherapistIntroduction";
+import Office from "./components/Office";
+import GetInTouch from "./components/GetInTouch";
 import WorkWithMe from "./components/WorkWithMe";
+import Specialities from "./components/Specialities";
+import ProfBackground from "./components/ProfBackground";
+import TherapistIntroduction from "./components/TherapistIntroduction";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <Specialities />
       <WorkWithMe />
       <TherapistIntroduction />
+      <Office />
       <FAQ />
       <ProfBackground />
       <CTA />
