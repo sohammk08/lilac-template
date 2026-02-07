@@ -31,7 +31,7 @@ function FAQ() {
   };
 
   return (
-    <section className="bg-[#FDF8F3] font-sans py-16 sm:py-20 lg:py-24">
+    <section className="bg-[#103a2c] font-sans py-16 sm:py-20 lg:py-24">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-12 sm:gap-16 lg:gap-20 items-start">
           {/* Left Section - Image */}
@@ -47,37 +47,32 @@ function FAQ() {
 
           {/* Right Section - FAQ Content */}
           <div className="w-full lg:w-7/12 flex flex-col pt-0 lg:pt-24 order-2 lg:order-2">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#3d4a3d] mb-10 sm:mb-12 lg:mb-14 tracking-tight text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-semibold text-[#f5f0e6] mb-10 sm:mb-12 lg:mb-14 tracking-tight text-center lg:text-left">
               FAQs
             </h2>
 
-            <div className="flex flex-col">
+            <div className="border-t border-[#c4a574]/20">
               {faqs.map((item, index) => {
                 const isOpen = openIndex === index;
 
                 return (
-                  <div
-                    key={index}
-                    className="border-t border-[#3d4a3d]/30 last:border-b"
-                  >
+                  <div key={index} className="border-y border-[#c4a574]/15">
                     <button
                       onClick={() => handleToggle(index)}
-                      className="w-full flex items-center gap-4 sm:gap-6 lg:gap-8 py-5 sm:py-6 lg:py-7 text-left group outline-none cursor-pointer"
+                      className="w-full flex items-center justify-between py-6 lg:py-4 text-left group outline-none cursor-pointer"
                     >
-                      {/* Icon */}
-                      <div className="relative w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center shrink-0">
-                        <span className="absolute w-5 sm:w-6 h-[1.5px] bg-[#3d4a3d]" />
+                      <span className="text-lg sm:text-xl lg:text-2xl xl:text-[28px] font-medium text-[#f5f0e6] tracking-tight group-hover:text-[#c4a574] transition-colors duration-300">
+                        {item.question}
+                      </span>
+                      <div className="relative w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center shrink-0 ml-4">
+                        <span className="absolute w-5 sm:w-6 h-[1.5px] bg-[#c4a574]" />
                         <motion.span
-                          className="absolute w-5 sm:w-6 h-[1.5px] bg-[#3d4a3d]"
+                          className="absolute w-5 sm:w-6 h-[1.5px] bg-[#c4a574]"
                           initial={{ rotate: 90 }}
                           animate={{ rotate: isOpen ? 0 : 90 }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                         />
                       </div>
-
-                      <span className="text-lg sm:text-xl lg:text-2xl xl:text-[28px] font-bold text-[#3d4a3d] tracking-tight leading-snug">
-                        {item.question}
-                      </span>
                     </button>
 
                     <AnimatePresence initial={false}>
@@ -92,7 +87,7 @@ function FAQ() {
                           }}
                           className="overflow-hidden"
                         >
-                          <div className="pb-6 sm:pb-8 pl-9 sm:pl-12 lg:pl-14 text-[#3d4a3d] text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+                          <div className="pb-8 text-[#f5f0e6]/90 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
                             {item.answer}
                           </div>
                         </motion.div>

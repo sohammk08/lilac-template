@@ -28,7 +28,7 @@ function ProfBackground() {
   };
 
   return (
-    <section className="bg-[#103a2c] font-sans py-20 lg:py-20">
+    <section className="bg-[#103a2c] font-sans py-20 lg:py-20 border-t border-[#c4a574]/20">
       <div className="max-w-4xl mx-auto px-6 lg:px-12">
         <h2 className="text-4xl lg:text-5xl font-serif font-semibold text-[#f5f0e6] text-center mb-8 tracking-tight">
           My Professional Background

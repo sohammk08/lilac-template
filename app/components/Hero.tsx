@@ -9,7 +9,7 @@ function Hero() {
       <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12 py-20">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 xl:gap-32">
           {/* Image - Arched Shape */}
-          <div className="relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] aspect-[3/4] mt-5 rounded-t-[200px] overflow-hidden shrink-0">
+          <div className="relative w-full max-w-[320px] sm:max-w-95 md:max-w-105 aspect-3/4 mt-5 rounded-t-[200px] overflow-hidden shrink-0">
             <motion.img
               src="/im1.png"
               alt="Misty forest with moonlit river"
