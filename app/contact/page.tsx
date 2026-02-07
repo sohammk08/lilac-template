@@ -16,7 +16,7 @@ interface GalleryImage {
 const IMAGES: GalleryImage[] = [
   {
     id: 1,
-    src: "/holdingflowers.png",
+    src: "/therapistImage.png",
     alt: "",
     aspect: "portrait",
   },
@@ -44,18 +44,15 @@ function Contact() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
-  // Handle opening the lightbox
   const openLightbox = (image: GalleryImage, index: number) => {
     setSelectedImage(image);
     setCurrentIndex(index);
   };
 
-  // Handle closing the lightbox
   const closeLightbox = () => {
     setSelectedImage(null);
   };
 
-  // Navigation logic
   const showNext = useCallback(
     (e?: React.MouseEvent) => {
       e?.stopPropagation();
@@ -76,11 +73,9 @@ function Contact() {
     [currentIndex],
   );
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!selectedImage) return;
-
       if (e.key === "Escape") closeLightbox();
       if (e.key === "ArrowRight") showNext();
       if (e.key === "ArrowLeft") showPrev();
@@ -90,7 +85,6 @@ function Contact() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedImage, currentIndex, showNext, showPrev]);
 
-  // Prevent body scroll when lightbox is open
   useEffect(() => {
     if (selectedImage) {
       document.body.style.overflow = "hidden";
@@ -100,153 +94,183 @@ function Contact() {
   }, [selectedImage]);
 
   return (
-    <section className="bg-[#b4aebd] font-sans min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section className="bg-[#0d261e] font-serif min-h-screen">
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left Section */}
-          <div>
+          <div className="order-2 lg:order-1">
             <motion.h1
-              className="text-5xl lg:text-7xl font-semibold text-[#3d4a3d] mb-12 tracking-tight"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-normal text-[#f5f0e6] mb-8 leading-[1.05] tracking-tight"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             >
               Let&apos;s Connect
             </motion.h1>
 
-            <motion.p
-              className="text-xl lg:text-2xl text-[#3d4a3d] mb-4 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
-            >
-              Starting therapy is courageous.
-            </motion.p>
+            {/* Decorative underline */}
+            <div className="w-24 h-0.5 bg-[#c4a574] mb-8"></div>
 
-            <motion.p
-              className="text-xl lg:text-2xl text-[#3d4a3d] mb-12 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-            >
-              Get in touch for questions, or to book a free 15-minute
-              consultation.
-            </motion.p>
-
-            {/* Images */}
             <motion.div
-              className="relative w-full max-w-md"
-              initial={{ opacity: 0, y: 30 }}
+              className="space-y-6"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
             >
-              <div className="relative aspect-3/4 rounded-t-[200px] overflow-hidden bg-gray-300">
-                <motion.img
-                  src="/holdingflowers.png"
-                  alt="Person holding lilac flowers"
-                  className="object-cover w-full h-full"
-                />
-              </div>
+              <p className="text-lg md:text-xl font-serif font-normal text-[#f5f0e6]/90 leading-[1.7]">
+                Starting therapy is a meaningful and courageous step.
+              </p>
 
-              {/* Overlapping Circle Image */}
-              <div className="absolute -bottom-8 -right-8 w-40 h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden bg-[#C8C4CE]">
-                <motion.img
-                  src="/flowers.png"
-                  alt="White flowers"
-                  className="object-cover w-full h-full"
-                />
-              </div>
+              <p className="text-lg md:text-xl font-serif font-normal text-[#f5f0e6]/90 leading-[1.7]">
+                I offer a free 15-minute phone or video consultation to answer
+                questions, discuss your needs, and see if we might be a good
+                fit.
+              </p>
+
+              <p className="text-lg md:text-xl font-serif font-normal text-[#f5f0e6]/60 italic">
+                Feel free to reach out. No pressure, just a conversation.
+              </p>
             </motion.div>
           </div>
 
-          {/* Right Section */}
+          {/* Right Section - Image */}
           <motion.div
-            className="bg-[#2a3a2a] p-8 lg:p-12"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="order-1 lg:order-2 relative"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <p className="text-[#FDF8F3] text-lg lg:text-xl leading-relaxed">
-              <span className="font-bold">PLEASE NOTE:</span> If you opt to use
-              a &quot;Form Block&quot; on your contact page this is not
-              HIPAA-compliant. Squarespace stores data that is input into forms
-              in the Marketing tab under Profiles. Instead, you can embed a
-              HIPAA-compliant form, a link to your client portal, or simply put
-              your email address.
-            </p>
+            <div className="relative w-full max-w-md mx-auto lg:max-w-none">
+              <div className="relative aspect-3/4 rounded-t-[200px] overflow-hidden">
+                <motion.img
+                  src="/therapistImage.png"
+                  alt="Therapist portrait"
+                  className="object-cover w-full h-full"
+                  transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Book meeting */}
-      <div className="flex flex-col justify-center items-center bg-[#E8E2DE] py-18 lg:py-24">
-        <motion.h2
-          className="text-3xl text-center lg:text-4xl font-bold text-[#3d4a3d] mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
-        >
-          Book a Free Consultation
-        </motion.h2>
-        <motion.p className="text-2xl font-medium text-left text-[#3d4a3d] max-w-2xl mx-auto mb-8">
-          Add some text here if you like, and add your scheduling widget below
-          (you can get one by signing up for a scheduling account through
-          Squarespace, the top-tier plan is HIPAA compliant OR you can use your
-          client portal).
-        </motion.p>
-        <Link
-          href="#"
-          className="inline-flex items-center gap-3 px-8 py-2 border border-[#3d4a3d] text-[#3d4a3d] text-base font-semibold tracking-wider uppercase hover:bg-[#3d4a3d] hover:text-[#FDF8F3] transition-all duration-300"
-        >
-          BOOK CONSULTATION
-          <span className="text-xl my-auto">→</span>
-        </Link>
+      {/* HIPAA Notice */}
+      <motion.div
+        className="bg-[#f5f0e6]/5 border-y border-[#f5f0e6]/10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-4xl mx-auto px-6 py-12 lg:py-16 text-center">
+          <p className="text-[#f5f0e6]/70 text-base md:text-lg font-serif leading-relaxed">
+            <span className="text-[#c4a574] font-medium">Please note:</span> Any
+            contact form used on this site is not HIPAA-compliant for sharing
+            protected health information. For clinical matters, please email
+            directly or use a secure client portal after we begin working
+            together.
+          </p>
+        </div>
+      </motion.div>
+
+      {/* Book Consultation */}
+      <div className="bg-[#E8E2DE] py-20 lg:py-28">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <motion.h2
+            className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-[#0d261e] mb-6 leading-[1.1]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            Book a Free Consultation
+          </motion.h2>
+
+          <div className="w-16 h-0.5 bg-[#c4a574] mx-auto mb-8"></div>
+
+          <motion.p
+            className="text-[#0d261e]/70 text-lg mb-10 font-serif"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Add a calendar here (eg. calendly, cal.com, etc.)
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <Link
+              href="#"
+              className="inline-flex items-center gap-3 px-8 py-4 border font-sans uppercase tracking-tight border-[#0d261e]/30 rounded-full text-[#0d261e] text-sm font-medium hover:bg-[#0d261e] hover:text-[#f5f0e6] transition-all duration-300"
+            >
+              Connect with me
+              <span className="text-lg">→</span>
+            </Link>
+          </motion.div>
+        </div>
       </div>
 
       {/* Office Location */}
-      <div className="bg-[#838344] py-20 lg:py-28">
-        <div className="mx-12">
+      <div className="bg-[#0d261e] py-20 lg:py-28 border-t border-[#f5f0e6]/10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left: Office Info */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <h2 className="text-4xl lg:text-5xl font-medium text-[#FDF8F3] mb-8 tracking-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-[#f5f0e6] mb-6 leading-[1.1]">
                 My Office
               </h2>
-              <div className="space-y-1 text-[#FDF8F3] text-xl lg:text-2xl mb-12">
-                <p>123 Example Street</p>
-                <p>Minneapolis, MN</p>
+
+              <div className="w-16 h-0.5 bg-[#c4a574] mb-8"></div>
+
+              <div className="space-y-2 text-[#f5f0e6]/80 text-lg md:text-xl font-serif mb-12">
+                <p>123 Street 45W</p>
+                <p>Santa Monica, CA 90401</p>
               </div>
 
-              <h3 className="text-3xl lg:text-4xl font-medium text-[#FDF8F3] mb-6 tracking-tight">
+              <h3 className="text-2xl md:text-3xl font-serif font-normal text-[#f5f0e6] mb-4">
                 Hours
               </h3>
-              <div className="space-y-1 text-[#FDF8F3] text-xl lg:text-2xl">
-                <p>Monday – Friday</p>
-                <p>10am – 6pm</p>
+
+              <div className="w-12 h-px bg-[#c4a574]/50 mb-6"></div>
+
+              <div className="space-y-1 text-[#f5f0e6]/80 text-lg md:text-xl font-serif">
+                <p>Monday - Friday</p>
+                <p>10am - 6pm</p>
               </div>
             </motion.div>
 
             {/* Right: Google Maps */}
             <motion.div
-              className="w-full h-100 lg:h-125 bg-gray-200"
+              className="w-full aspect-4/3 lg:aspect-square overflow-hidden"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11293.767352238133!2d-93.2654694!3d44.9777536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b3329a75fc44b3%3A0xab6d15df45dea9e!2sMinneapolis%2C%20MN!5e0!3m2!1sen!2sus!4v1709820000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21240.427724717898!2d-118.49622678955514!3d34.022924921427254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2a4cec2910019%3A0xb4170ab5ff23f5ab!2sSanta%20Monica%2C%20CA!5e0!3m2!1sen!2sus!4v1770314481704!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -254,44 +278,49 @@ function Contact() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Office Location"
-                className="grayscale"
+                className="grayscale opacity-80 hover:opacity-100 transition-opacity duration-500"
               />
             </motion.div>
           </div>
         </div>
       </div>
 
-      <div className="w-full bg-[#f8f5f2] py-16 px-4 sm:px-6 lg:px-12 font-sans">
+      {/* Social Gallery */}
+      <div className="w-full bg-[#E8E2DE] py-20 lg:py-28 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-sans font-semibold text-[#2d3b2d] mb-10 tracking-tight"
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-[#0d261e] mb-4 leading-[1.1]"
           >
             Find me on social.
           </motion.h2>
 
+          <div className="w-16 h-0.5 bg-[#c4a574] mb-12"></div>
+
           {/* Grid Gallery */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {IMAGES.map((img, index) => (
               <motion.div
                 key={img.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative aspect-4/5 overflow-hidden cursor-pointer bg-gray-200"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative aspect-3/4 overflow-hidden cursor-pointer rounded-t-[100px]"
                 onClick={() => openLightbox(img, index)}
               >
                 <motion.img
                   src={img.src}
                   alt={img.alt}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-in-out"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-[#0d261e]/0 group-hover:bg-[#0d261e]/20 transition-colors duration-300" />
               </motion.div>
             ))}
           </div>
@@ -305,33 +334,33 @@ function Contact() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-white/95 backdrop-blur-sm"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-[#0d261e]/95 backdrop-blur-sm"
               onClick={closeLightbox}
             >
               {/* Close */}
               <button
                 onClick={closeLightbox}
-                className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-800 transition-colors z-50"
+                className="absolute top-6 right-6 p-2 text-[#f5f0e6]/60 hover:text-[#f5f0e6] transition-colors z-50"
                 aria-label="Close lightbox"
               >
-                <IoCloseOutline size={36} />
+                <IoCloseOutline size={32} />
               </button>
 
               {/* Navigation */}
               <button
                 onClick={showPrev}
-                className="absolute left-4 md:left-8 p-2 text-gray-300 hover:text-gray-800 transition-colors z-50 hidden sm:block"
+                className="absolute left-4 md:left-8 p-2 text-[#f5f0e6]/40 hover:text-[#f5f0e6] transition-colors z-50 hidden sm:block"
                 aria-label="Previous image"
               >
-                <FiChevronLeft size={48} strokeWidth={1} />
+                <FiChevronLeft size={40} strokeWidth={1} />
               </button>
 
               <button
                 onClick={showNext}
-                className="absolute right-4 md:right-8 p-2 text-gray-300 hover:text-gray-800 transition-colors z-50 hidden sm:block"
+                className="absolute right-4 md:right-8 p-2 text-[#f5f0e6]/40 hover:text-[#f5f0e6] transition-colors z-50 hidden sm:block"
                 aria-label="Next image"
               >
-                <FiChevronRight size={48} strokeWidth={1} />
+                <FiChevronRight size={40} strokeWidth={1} />
               </button>
 
               <motion.div
@@ -346,7 +375,10 @@ function Contact() {
                 <motion.img
                   src={selectedImage.src}
                   alt={selectedImage.alt}
-                  className="max-w-full max-h-full object-contain shadow-2xl"
+                  className="max-w-full max-h-full object-contain rounded-t-[50px]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
                 />
               </motion.div>
 
@@ -354,13 +386,13 @@ function Contact() {
               <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-8 sm:hidden z-50">
                 <button
                   onClick={showPrev}
-                  className="p-2 text-gray-600 bg-white/50 rounded-full"
+                  className="p-3 text-[#f5f0e6] bg-[#f5f0e6]/10 rounded-full backdrop-blur-sm"
                 >
                   <FiChevronLeft size={24} />
                 </button>
                 <button
                   onClick={showNext}
-                  className="p-2 text-gray-600 bg-white/50 rounded-full"
+                  className="p-3 text-[#f5f0e6] bg-[#f5f0e6]/10 rounded-full backdrop-blur-sm"
                 >
                   <FiChevronRight size={24} />
                 </button>

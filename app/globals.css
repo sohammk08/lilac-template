@@ -1,10 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Raleway", sans-serif;
-}
-
-body {
-  background-color: #fdf8f3;
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
 }

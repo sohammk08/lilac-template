@@ -5,10 +5,10 @@ import Link from "next/link";
 
 function CTA() {
   return (
-    <section className="bg-[#797941] font-sans py-24 lg:py-32">
+    <section className="bg-[#103a2c] font-sans py-24 lg:py-32 border-t border-[#c4a574]/20">
       <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center">
         <motion.h2
-          className="text-4xl lg:text-5xl font-medium text-[#FDF8F3] mb-8 tracking-tight"
+          className="text-4xl lg:text-5xl font-serif font-semibold text-[#f5f0e6] mb-8 tracking-tight"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -18,7 +18,7 @@ function CTA() {
         </motion.h2>
 
         <motion.p
-          className="text-[#FDF8F3] text-lg lg:text-xl leading-relaxed mb-12 max-w-2xl"
+          className="text-[#f5f0e6]/90 font-medium text-lg lg:text-xl leading-relaxed mb-12 max-w-2xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -37,7 +37,7 @@ function CTA() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 px-6 py-2 border border-[#FDF8F3] text-[#FDF8F3] text-sm font-semibold uppercase transition-all duration-300 hover:bg-[#FDF8F3] hover:text-[#8B8B4E]"
+            className="inline-flex items-center gap-3 px-6 py-2 border border-[#c4a574]/20 text-white/80 text-sm font-semibold uppercase transition-all duration-300 hover:bg-[#FDF8F3] hover:text-[#8B8B4E]"
           >
             Get In Touch
             <motion.span
