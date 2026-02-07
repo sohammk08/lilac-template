@@ -1,5 +1,7 @@
 "use client";
+
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface BlogPost {
   id: number;
@@ -35,13 +37,13 @@ const blogPosts: BlogPost[] = [
     id: 4,
     title: "Blog Post Four",
     date: "3/11/19",
-    image: "/holdingflowers.png",
+    image: "/im3.png",
     slug: "blog-post-four",
   },
 ];
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
+  initial: { opacity: 0, y: 40 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
 };
@@ -56,23 +58,22 @@ const staggerContainer = {
 
 export default function Blogs() {
   return (
-    <main className="min-h-screen bg-[#FDF8F3]">
+    <main className="min-h-screen bg-[#0d261e]">
       {/* Hero Section */}
-      <section className="px-6 py-16 md:py-24 lg:py-32 font-sans">
+      <section className="px-6 py-24 md:py-24 font-serif">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center gap-12 lg:gap-20">
             <motion.div
-              initial={{ opacity: 0, x: -60 }}
+              initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
               className="relative"
             >
-              <div className="relative overflow-hidden h-160 rounded-t-[210px] rounded-b-none aspect-3/4 max-w-md mx-auto lg:mx-0">
+              <div className="relative overflow-hidden rounded-t-[200px] aspect-3/4 max-w-md mx-auto">
                 <motion.img
                   src="/blogImagePrimary.png"
                   alt="Person reading a book"
-                  className="w-auto h-full object-cover"
-                  whileHover={{ scale: 1.03 }}
+                  className="w-full h-full object-cover"
                   transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                 />
               </div>
@@ -80,52 +81,61 @@ export default function Blogs() {
 
             {/* Hero Content */}
             <motion.div
-              initial={{ opacity: 0, x: 60 }}
+              initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{
                 duration: 1,
                 ease: [0.25, 0.1, 0.25, 1],
                 delay: 0.2,
               }}
-              className="text-center lg:text-left"
+              className="flex flex-col items-center lg:items-start max-w-lg"
             >
-              <motion.h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-[#2d3a2d] mb-6">
-                The Lilac Blog
+              <motion.h1
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-normal text-[#f5f0e6] mb-8 leading-[1.05] tracking-tight text-center lg:text-left"
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 1,
+                  ease: [0.25, 0.1, 0.25, 1],
+                  delay: 0.2,
+                }}
+              >
+                Maya&apos;s Blog
               </motion.h1>
-              <motion.p
-                className="text-lg md:text-2xl font-medium text-[#4a5a4a] leading-relaxed mb-2"
+
+              <div className="w-24 h-0.5 bg-[#c4a574] mb-8 mx-auto lg:mx-0" />
+
+              <motion.div
+                className="space-y-4 text-center lg:text-left"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                My tiny corner of the internet
-                <br />
-                where I talk about all things
-                <br />
-                healing, heart, and wholeness.
-              </motion.p>
-              <motion.p
-                className="text-[#4a5a4a] font-medium"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                Glad you&apos;re here.
-              </motion.p>
+                <p className="text-lg md:text-xl font-serif font-normal text-[#f5f0e6]/90 leading-[1.6]">
+                  My tiny corner of the internet
+                  <br className="hidden sm:block" />
+                  where I talk about all things
+                  <br className="hidden sm:block" />
+                  healing, heart, and wholeness.
+                </p>
+                <p className="text-[#f5f0e6]/60 font-serif font-normal text-base md:text-lg italic">
+                  Glad you&apos;re here.
+                </p>
+              </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Blog Grid Section */}
-      <section className="bg-[#E8E2DE] px-6 py-16 md:py-24">
-        <div className="max-w-348 mx-auto">
+      <section className="bg-[#0a1f18] px-6 py-20 md:py-28">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-x-30 gap-y-16"
+            className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16"
           >
             {blogPosts.map((post, index) => (
               <motion.article
@@ -134,7 +144,7 @@ export default function Blogs() {
                 className="group cursor-pointer"
               >
                 {/* Blog Image */}
-                <div className="overflow-hidden mb-6">
+                <div className="overflow-hidden rounded-lg mb-6">
                   <motion.div
                     className="aspect-4/3 relative"
                     whileHover="hover"
@@ -144,6 +154,7 @@ export default function Blogs() {
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover"
+                      transition={{ duration: 0.6 }}
                     />
                   </motion.div>
                 </div>
@@ -151,7 +162,7 @@ export default function Blogs() {
                 {/* Blog Content */}
                 <div className="space-y-3">
                   <motion.p
-                    className="text-sm font-mono font-semibold text-[#6a7a6a] uppercase tracking-wide"
+                    className="text-sm font-normal text-[#c4a574] uppercase tracking-widest font-serif"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: index * 0.1 + 0.3 }}
@@ -159,17 +170,16 @@ export default function Blogs() {
                   >
                     {post.date}
                   </motion.p>
-                  <motion.h2 className="text-2xl md:text-3xl font-sans font-semibold text-[#2d3a2d]">
+                  <motion.h2 className="text-2xl md:text-3xl font-serif font-normal text-[#f5f0e6] transition-colors duration-300">
                     {post.title}
                   </motion.h2>
-                  <motion.a
+                  <Link
                     href={`/blog/${post.slug}`}
-                    className="inline-flex items-center font-medium gap-2 text-[#2d3a2d] underline underline-offset-4 decoration-1 hover:text-[#4a5a4a] transition-colors duration-300"
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.3 }}
+                    className="inline-flex items-center font-normal gap-2 text-[#f5f0e6]/70 transition-colors duration-300 font-serif"
                   >
                     Read More
-                  </motion.a>
+                    <span className="text-lg">→</span>
+                  </Link>
                 </div>
               </motion.article>
             ))}
@@ -178,17 +188,17 @@ export default function Blogs() {
       </section>
 
       {/* Newsletter */}
-      <section className="bg-[#7f7b46] py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="bg-[#0d261e] py-20 md:py-28 border-y border-[#f5f0e6]/10">
+        <div className="max-w-2xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="border border-white/30 p-8 md:p-12 lg:p-16 text-center"
+            className="text-center"
           >
             <motion.h2
-              className="text-3xl md:text-4xl font-sans font-semibold text-white mb-4"
+              className="text-3xl md:text-4xl font-serif font-normal text-[#f5f0e6] mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -196,8 +206,12 @@ export default function Blogs() {
             >
               Subscribe
             </motion.h2>
+
+            {/* Decorative underline */}
+            <div className="w-16 h-px bg-[#c4a574] mb-6 mx-auto"></div>
+
             <motion.p
-              className="text-white/90 mb-8"
+              className="text-[#f5f0e6]/70 mb-10 font-serif font-normal"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -208,7 +222,7 @@ export default function Blogs() {
 
             {/* Email Form */}
             <motion.form
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-lg mx-auto"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -218,11 +232,11 @@ export default function Blogs() {
               <input
                 type="email"
                 placeholder="Email Address"
-                className="w-full sm:flex-1 px-6 py-4 bg-white text-[#2d3a2d] placeholder:text-[#8a9a8a] outline-none focus:ring-2 focus:ring-white/50 transition-all duration-300"
+                className="w-full sm:flex-1 px-6 py-4 bg-transparent border border-[#f5f0e6]/30 text-[#f5f0e6] placeholder:text-[#f5f0e6]/40 outline-none focus:border-[#c4a574] transition-all duration-300 font-serif rounded-full"
               />
               <motion.button
                 type="submit"
-                className="w-full sm:w-auto px-8 py-4 border border-white/50 text-white uppercase text-sm tracking-wider hover:bg-white hover:text-[#7a8a4a] transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 border border-[#f5f0e6]/40 text-[#f5f0e6] text-sm tracking-wide hover:bg-[#f5f0e6] hover:text-[#0d261e] transition-all duration-300 rounded-full font-normal"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -231,7 +245,7 @@ export default function Blogs() {
             </motion.form>
 
             <motion.p
-              className="text-white/70 text-sm mt-6"
+              className="text-[#f5f0e6]/50 text-sm mt-8 font-serif"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}

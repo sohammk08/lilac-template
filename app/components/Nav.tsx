@@ -12,8 +12,8 @@ function Nav() {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const isContactPage = pathname === "/contact";
-  const bgColor = isContactPage ? "bg-[#b4aebd]" : "bg-[#FDF8F3]";
-  const textColor = "text-[#2a332a]";
+  const bgColor = "bg-[#0d261e]";
+  const textColor = "text-[#f5f0e6]";
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -89,8 +89,8 @@ function Nav() {
       transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={`${bgColor} ${textColor} fixed top-0 left-0 right-0 z-50`}
     >
-      <nav className="font-sans flex justify-between items-center px-6 sm:px-8 lg:px-12 py-4 mx-auto">
-        {/* LEFT SIDE */}
+      <nav className="font-sans flex justify-between items-center px-6 sm:px-8 py-6 mx-auto">
+        {/* LEFT SIDE - Logo */}
         <div className="flex items-center">
           {/* Mobile: Hamburger */}
           <button
@@ -100,7 +100,7 @@ function Nav() {
             aria-expanded={isMenuOpen}
           >
             <motion.div
-              className="absolute inset-0 rounded-full bg-[#2a332a]/10"
+              className="absolute inset-0 rounded-full bg-[#f5f0e6]/10"
               initial={false}
               animate={{
                 scale: isMenuOpen ? 1 : 0,
@@ -110,7 +110,7 @@ function Nav() {
             />
             <div className="relative w-6 h-3 flex flex-col justify-between">
               <motion.span
-                className="w-6 h-[0.2px] bg-[#2a332a] origin-center"
+                className="w-6 h-[0.2px] bg-[#f5f0e6] origin-center"
                 initial={false}
                 animate={{
                   rotate: isMenuOpen ? 45 : 0,
@@ -119,7 +119,7 @@ function Nav() {
                 transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               />
               <motion.span
-                className="w-6 h-[0.2px] bg-[#2a332a] origin-center"
+                className="w-6 h-[0.2px] bg-[#f5f0e6] origin-center"
                 initial={false}
                 animate={{
                   rotate: isMenuOpen ? -45 : 0,
@@ -130,39 +130,30 @@ function Nav() {
             </div>
           </button>
 
-          {/* Desktop: Logo */}
+          {/* Desktop & Mobile: Logo */}
           <Link
             href="/"
-            className="hidden md:block text-xl lg:text-[32px] font-sans font-semibold tracking-wide"
+            className="text-xl lg:text-2xl font-serif tracking-wide text-[#f5f0e6]"
             onClick={closeMenu}
           >
-            Lilac Template
+            Dr. Maya Reynolds
           </Link>
         </div>
 
-        {/* RIGHT SIDE */}
-        <div className="flex items-center">
+        {/* RIGHT SIDE - Navigation Links */}
+        <div className="flex items-center gap-8 lg:gap-12">
           {/* Desktop: Navigation Links */}
-          <div className="hidden md:flex gap-8 lg:gap-12 text-base lg:text-lg font-medium">
+          <div className="hidden md:flex gap-8 lg:gap-12 text-base lg:text-lg font-normal">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="hover:opacity-60 transition-opacity duration-200"
+                className="hover:opacity-60 transition-opacity duration-200 font-sans"
               >
                 {link.label}
               </Link>
             ))}
           </div>
-
-          {/* Mobile: Logo */}
-          <Link
-            href="/"
-            className="md:hidden text-lg font-sans font-semibold tracking-wide"
-            onClick={closeMenu}
-          >
-            Lilac Template
-          </Link>
         </div>
       </nav>
 
@@ -177,7 +168,7 @@ function Nav() {
             className={`fixed inset-0 ${bgColor} z-40 md:hidden flex flex-col`}
           >
             {/* Mobile Menu Header */}
-            <div className="flex justify-between items-center px-6 py-4">
+            <div className="flex justify-between items-center px-6 py-6">
               {/* Close Button */}
               <button
                 onClick={closeMenu}
@@ -185,7 +176,7 @@ function Nav() {
                 aria-label="Close menu"
               >
                 <motion.div
-                  className="absolute inset-0 rounded-full bg-[#2a332a]/10"
+                  className="absolute inset-0 rounded-full bg-[#f5f0e6]/10"
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0, opacity: 0 }}
@@ -193,14 +184,14 @@ function Nav() {
                 />
                 <div className="relative w-6 h-4 flex flex-col justify-center">
                   <motion.span
-                    className="absolute w-6 h-[1.5px] bg-[#2a332a]"
+                    className="absolute w-6 h-[1.5px] bg-[#f5f0e6]"
                     initial={{ rotate: 45, opacity: 0 }}
                     animate={{ rotate: 45, opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   />
                   <motion.span
-                    className="absolute w-6 h-[1.5px] bg-[#2a332a]"
+                    className="absolute w-6 h-[1.5px] bg-[#f5f0e6]"
                     initial={{ rotate: -45, opacity: 0 }}
                     animate={{ rotate: -45, opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -212,10 +203,10 @@ function Nav() {
               {/* Logo */}
               <Link
                 href="/"
-                className="text-lg font-semibold tracking-wide"
+                className="text-lg font-serif font-semibold tracking-wide"
                 onClick={closeMenu}
               >
-                Lilac Template
+                Dr. Maya Reynolds
               </Link>
             </div>
 
@@ -231,7 +222,7 @@ function Nav() {
                   <Link
                     href={link.href}
                     onClick={closeMenu}
-                    className="text-4xl sm:text-5xl font-medium text-[#2a332a] hover:opacity-60 transition-opacity duration-200"
+                    className="text-4xl sm:text-5xl font-normal text-[#f5f0e6] hover:opacity-60 transition-opacity duration-200 font-sans"
                   >
                     {link.label}
                   </Link>
